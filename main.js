@@ -8,10 +8,12 @@ for (let i = 0; i < 16; i++) {
 		let td = text2html('<td><input type="color"></td>');
 		tr.append(td);
 		let color = td.querySelector('input');
+		color.onchange = () => td.style.backgroundColor = color.value;
 		Object.defineProperty(colors[i], j, {
-			set: v => color.value = v,
+			set: v => td.style.backgroundColor = color.value = v,
 			get: () => color.value
 		});
+		colors[i][j] = '#ffffff';
 	}
 }
 

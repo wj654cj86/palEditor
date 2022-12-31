@@ -18,7 +18,14 @@ body {
 	font-size  : 20px;
 }
 
+#colortbody td {
+	padding      : 0px;
+	border       : 1px solid #666;
+	border-radius: 10%;
+}
+
 input[type=color] {
-	width    : 40px;
-	height   : 40px;
+	width  : 40px;
+	height : 40px;
+	opacity: 0;
 }
