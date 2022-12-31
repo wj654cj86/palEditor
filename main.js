@@ -20,7 +20,7 @@ for (let i = 0; i < 16; i++) {
 upload.onchange = async () => {
 	try {
 		let datalines = await loadfile('text', URL.createObjectURL(upload.files[0]))
-			.then(str => str.split('\r\n'))
+			.then(str => str.replace(/\r\n/g, '\n').split('\n'))
 			.then(arr => { arr.shift(), arr.shift(), arr.shift(); return arr; })
 			.then(arr => arr.map(str => cc.rgb.hex(...str.split(' ').map(s => Number(s)))));
 		let k = 0
